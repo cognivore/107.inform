@@ -9,7 +9,9 @@ Include Modified Exit by Emily Short.
 At a Peculiar Crossroad is a room.
 Instead of looking in Peculiar Crossroad: do nothing.
 Delaying banner text is a truth state that varies. Delaying banner text is initially true.
+[Supressing errors is a truth state that varies. Supressing parser error is initially true.]
 For printing the banner text when delaying banner text is true: do nothing.
+[For printing a parser error when supressing errors is true: do nothing. (We can use reject player's command instead!)]
 
 When play begins:
 	say "It was one of those days at the office, boring and intense at the same time. Your eyes are sore and the natural light feels weird after spending a day in a lamp-lit environment.
@@ -20,10 +22,11 @@ Red traffic light rushes you as you speed up to cross the two lanes that go from
 After reading a command when the command prompt is "think about ":
 	let Resp be player's command;
 	if Resp matches the text "lamp":
-		say "Gosh, are they bright and artificial... But it doesn't matter, we stare at the screens all day anyways.";
-		say "Eeee, it's green! Gotta cross the street!";
+		say "Are these lamps bright and artificial... But it doesn't matter, we stare at the screens all day anyways.";
+	if (Resp matches the text "crossing") or (Resp matches the text "traffic") or (Resp matches the text "road"):
+		say "There was not much traffic. Where there was a lot of traffic is in the work E-Mail... Your thoughts gravitate";
 	otherwise:
-		say "This topic doesn't seem as interesting as running across the street while the traffic light is still green.";
+		say "You think about it, but can't quite focus as your thoughts drift ";
 	now the command prompt is "> ";
 	now delaying banner text is false;
 	say "
@@ -31,7 +34,8 @@ After reading a command when the command prompt is "think about ":
 
 ";
 	say banner text;
-	move player to Garden.
+	move player to Garden;
+	reject the player's command.
 
 Bronhood Garden is a room.  "You are by a garden, surrounded by comfy-looking benches. The vegetation starts to wither, but still provides a majestic centerpiece to the backdrop of an old, half-destroyed church to the west. The ruins clearly underwent restoration, making it seem that its demise was natural."
 

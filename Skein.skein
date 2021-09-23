@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Skein rootNode="node-1">
   <generator>Windows Inform 7 6M62</generator>
-  <activeNode nodeId="node-67"/>
+  <activeNode nodeId="node-82"/>
   <item nodeId="node-1">
     <command xml:space="preserve">107</command>
-    <result xml:space="preserve">It was one of those days at the office, boring and intense at the same time. Your eyes are sore and the natural light feels weird after spending a day in a lamp-lit environment.&#x000A;&#x000A;Red traffic light rushes you as you speed up to cross the two lanes that go from the cathedral passage to a small garden. After you crossed the street, you stop and look around. What would you like to THINK about?&#x000A;&#x000A;&#x000A;think about</result>
+    <result xml:space="preserve">It was one of those days at the office, boring and intense at the same time. Your eyes are sore and the natural light feels weird after spending a day in a lamp-lit environment.&#x000A;&#x000A;Red traffic light rushes you as you speed up to cross the two lanes that go from the cathedral passage to a small garden. After you crossed the street, you stop and look around. What would you like to think about?&#x000A;&#x000A;&#x000A;think about</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
     <children>
@@ -18,6 +18,7 @@
       <child nodeId="node-58"/>
       <child nodeId="node-59"/>
       <child nodeId="node-67"/>
+      <child nodeId="node-82"/>
     </children>
   </item>
   <item nodeId="node-2">
@@ -562,9 +563,133 @@
   </item>
   <item nodeId="node-58">
     <command xml:space="preserve">lamps</command>
-    <result xml:space="preserve">This topic doesn't seem as interesting as running across the street while the traffic light is still green.&#x000A; 107&#x000A;An Interactive Fiction by Jonn and George&#x000A;Release 1 / Serial number 210923 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">Are these lamps bright and artificial... But it doesn't matter, we stare at the screens all day anyways.&#x000A;You think about it, but can't quite focus as your thoughts drift &#x000A;&#x000A;&#x000A;107&#x000A;An Interactive Fiction by Jonn and George&#x000A;Release 1 / Serial number 210924 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Bronhood Garden&#x000A;You are by a garden, surrounded by comfy-looking benches. The vegetation starts to wither, but still provides a majestic centerpiece to the backdrop of an old, half-destroyed church to the west. The ruins clearly underwent restoration, making it seem that its demise was natural.&#x000A;&#x000A;Benches are already dry, even though you are pretty sure that it was raining this morning.&#x000A;&#x000A;That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>YES</changed>
+    <children>
+      <child nodeId="node-68"/>
+      <child nodeId="node-75"/>
+    </children>
+  </item>
+  <item nodeId="node-68">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
+    <children>
+      <child nodeId="node-69"/>
+    </children>
+  </item>
+  <item nodeId="node-69">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Bronhood Garden&#x000A;You are by a garden, surrounded by comfy-looking benches. The vegetation starts to wither, but still provides a majestic centerpiece to the backdrop of an old, half-destroyed church to the west. The ruins clearly underwent restoration, making it seem that its demise was natural.&#x000A;&#x000A;Benches are already dry, even though you are pretty sure that it was raining this morning.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-70"/>
+    </children>
+  </item>
+  <item nodeId="node-70">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-71"/>
+    </children>
+  </item>
+  <item nodeId="node-71">
+    <command xml:space="preserve">x</command>
+    <result xml:space="preserve">(the bench)&#x000A;It would be nice to sit here and enjoy fresh air for a bit... Given how stressful the day at work was.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-72"/>
+    </children>
+  </item>
+  <item nodeId="node-72">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">Bronhood Church&#x000A;You carefully enter a seventeenth century church through a heavy door of organic glass and dark plastic. Behind your back, lies the picturesque garden.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-73"/>
+    </children>
+  </item>
+  <item nodeId="node-73">
+    <command xml:space="preserve">exit</command>
+    <result xml:space="preserve">Bronhood Garden&#x000A;You are by a garden, surrounded by comfy-looking benches. The vegetation starts to wither, but still provides a majestic centerpiece to the backdrop of an old, half-destroyed church to the west. The ruins clearly underwent restoration, making it seem that its demise was natural.&#x000A;&#x000A;Benches are already dry, even though you are pretty sure that it was raining this morning.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-74"/>
+    </children>
+  </item>
+  <item nodeId="node-74">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Passage by the Hospital&#x000A;The path from the peaceful square to the south brings you to a more chaotic place. Path to the Paul's Square paved with polished rusty-grey tiles bends northwest.&#x000A;&#x000A;All kinds of people fill the grounds by the entrance to the hospital.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-75">
+    <command xml:space="preserve">lamps</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>YES</changed>
+    <children>
+      <child nodeId="node-76"/>
+    </children>
+  </item>
+  <item nodeId="node-76">
+    <command xml:space="preserve">hello?</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>YES</changed>
+    <children>
+      <child nodeId="node-77"/>
+    </children>
+  </item>
+  <item nodeId="node-77">
+    <command xml:space="preserve">h</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>YES</changed>
+    <children>
+      <child nodeId="node-78"/>
+    </children>
+  </item>
+  <item nodeId="node-78">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">Bronhood Church&#x000A;You carefully enter a seventeenth century church through a heavy door of organic glass and dark plastic. Behind your back, lies the picturesque garden.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-79"/>
+    </children>
+  </item>
+  <item nodeId="node-79">
+    <command xml:space="preserve">back</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>YES</changed>
+    <children>
+      <child nodeId="node-80"/>
+    </children>
+  </item>
+  <item nodeId="node-80">
+    <command xml:space="preserve">out</command>
+    <result xml:space="preserve">Bronhood Garden&#x000A;You are by a garden, surrounded by comfy-looking benches. The vegetation starts to wither, but still provides a majestic centerpiece to the backdrop of an old, half-destroyed church to the west. The ruins clearly underwent restoration, making it seem that its demise was natural.&#x000A;&#x000A;Benches are already dry, even though you are pretty sure that it was raining this morning.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+    <children>
+      <child nodeId="node-81"/>
+    </children>
+  </item>
+  <item nodeId="node-81">
+    <command xml:space="preserve">hellpo</command>
+    <result xml:space="preserve">That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>YES</changed>
   </item>
   <item nodeId="node-59">
     <command xml:space="preserve">s</command>
@@ -575,6 +700,12 @@
   <item nodeId="node-67">
     <command xml:space="preserve">beer</command>
     <result xml:space="preserve">This topic doesn't seem as interesting as running across the street while the traffic light is still green.&#x000A;&#x000A;&#x000A;&#x000A;107&#x000A;An Interactive Fiction by Jonn and George&#x000A;Release 1 / Serial number 210923 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Bronhood Garden&#x000A;You are by a garden, surrounded by comfy-looking benches. The vegetation starts to wither, but still provides a majestic centerpiece to the backdrop of an old, half-destroyed church to the west. The ruins clearly underwent restoration, making it seem that its demise was natural.&#x000A;&#x000A;Benches are already dry, even though you are pretty sure that it was raining this morning.&#x000A;&#x000A;That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <changed>NO</changed>
+  </item>
+  <item nodeId="node-82">
+    <command xml:space="preserve">road</command>
+    <result xml:space="preserve">There was not much traffic. Where there was a lot of traffic is in the work E-Mail... Your thoughts gravitate&#x000A;&#x000A;&#x000A;107&#x000A;An Interactive Fiction by Jonn and George&#x000A;Release 1 / Serial number 210924 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD&#x000A;&#x000A;Bronhood Garden&#x000A;You are by a garden, surrounded by comfy-looking benches. The vegetation starts to wither, but still provides a majestic centerpiece to the backdrop of an old, half-destroyed church to the west. The ruins clearly underwent restoration, making it seem that its demise was natural.&#x000A;&#x000A;Benches are already dry, even though you are pretty sure that it was raining this morning.&#x000A;&#x000A;That's not a verb I recognise.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <changed>NO</changed>
   </item>
