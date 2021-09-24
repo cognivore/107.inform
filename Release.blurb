@@ -10,8 +10,8 @@ release to "C:\Users\sweater\Documents\Inform\Projects\107.materials\Release"
 
 ! Blorb instructions
 
-storyfile leafname "107.gblorb"
-storyfile "C:\Users\sweater\Documents\Inform\Projects\107.inform\Build\output.ulx" include
+storyfile leafname "107.zblorb"
+storyfile "C:\Users\sweater\Documents\Inform\Projects\107.inform\Build\output.z8" include
 ifiction "C:\Users\sweater\Documents\Inform\Projects\107.inform\Metadata.iFiction" include
 cover "C:\Program Files (x86)\Inform 7\Internal\Miscellany\Cover.jpg"
 picture 1 "C:\Program Files (x86)\Inform 7\Internal\Miscellany\Cover.jpg"
