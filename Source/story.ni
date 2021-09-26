@@ -82,21 +82,33 @@ To journal (someone - person) fixation:
 	if someone is carefree:
 		debug "carefree".
 
-Part II - London
+Part II - London, Tutorial
 
 At a Peculiar Crossroad is a room.
 Instead of looking in Peculiar Crossroad: do nothing.
 Delaying banner text is a truth state that varies. Delaying banner text is initially true.
 For printing the banner text when delaying banner text is true: do nothing.
 
+Python programming language is a scenery in a Peculiar Crossroad.
+Python is affecting. Python is downer. Reminder of python is "You're fairly sure it's not a good fit for high-assurance software".
+
+Scala programming language is a scenery in a Peculiar Crossroad.
+Scala is affecting. Scala is downer. Reminder of scala is "Why are they rewriting chunks of functionality from Scala to Python? Maybe doing it the other way around would have been wiser?.".
+
 Inform programming language is a scenery in a Peculiar Crossroad.
 Inform is affecting. Inform is upper. Reminder of inform is "You wonder what language is this game you live written in... Ah, it feels so much better to choose your own adventure rather than doing enterprise-y tasks".
 Understand "life" as inform programming language.
 
-Python programming language is a scenery in a Peculiar Crossroad.
-Python is affecting. Python is downer. Reminder of python is "You're fairly sure it's not a good fit for high-assurance software".
-Scala programming language is a scenery in a Peculiar Crossroad.
-Scala is affecting. Scala is downer. Reminder of scala is "Why are they rewriting chunks of functionality from Scala to Python? Maybe doing it the other way around would have been wiser?.".
+The wind is a scenery in a Peculiar Crossroad.
+Reminder of wind is "It's so unnoticable, you almost have to force yourself to draw attention to it".
+Understand "weather" as wind.
+
+The kids are a scenery in a Peculiar Crossroad.
+Description of kids is "A girl who makes the most ambitious tricks stands up among the kids showing off their skateboarding skills. On a rare ocassion when she tumbles, she gets up immediately and completes the failed trick."
+Kids are affecting. Kids are upper. Reminder of kids is "It's always great to watch facial expressions of people who are concentrating on something. The girl with the skateboard has an expression of determination and finesse".
+Understand "girl" as kids.
+
+Reminder of player is "Just living my life".
 
 When play begins:
 	now the level of the default logger is every level;
@@ -135,17 +147,20 @@ After reading a command when the command prompt is "think about ":
 
 
 	";
-	[say banner text;]
 	if player's command matches the text "think about":
 		debug "Here we should try to execute the command '[player's command]'";
 		make no decision;
 	otherwise:
+		say banner text;
 		move player to Garden;
 		reject the player's command.
 		
 After considering something when player is in a Peculiar Crossroad:
 	debug "Executed fallback and moving player to the garden now";
+	say banner text;
 	move player to Garden.
+
+Part III - London, Perception
 
 Bronhood Garden is a room.  "You are by a garden, surrounded by comfy-looking benches. The vegetation starts to wither, but still provides a majestic centerpiece to the backdrop of an old, half-destroyed church to the west. The ruins clearly underwent restoration, making it seem that the demise of the church was natural."
 
@@ -154,18 +169,31 @@ The bench is enterable and a supporter.
 The bench is fixed in place.
 The description of the bench is "It would be nice to sit here and enjoy fresh air for a bit... Given how stressful the day at work was."
 
-Meditation is a scenery in Garden.
+A meditation is a scenery in Garden.
 The printed name of meditation is "sitting down and thinking".
 After entering the bench:
 	if meditation is unthought-of:
-		say "You find a completely dry spot and sit down.";
+		say "You find a completely dry spot and sit down. In the back of your mind you have thoughts about the ongoing effort to rewrite some stuff from Scala to Python at work, but these thoughts wax and wane as the autumn wind caresses the vines and stems. You notice some kids trying skateboard tricks. It's quite relaxing to be here.";
 		move python to the Garden;
 		move scala to the Garden;
 		move inform to the Garden;
+		move wind to the Garden;
+		move kids to the Garden;
 		now meditation is thought-of;
 	otherwise:
 		say "Sitting here got kind of boring, besides it's rather cold...";
 		move player to the Garden.
+		
+
+After considering something when player is on a bench:
+	debug "Thinking on a bench (in the garden)";
+	say "After meditating on the bench for a little while, you get up to stretch your legs.";
+	move python to a Peculiar Crossroad;
+	move scala to a Peculiar Crossroad;
+	move inform to a Peculiar Crossroad;
+	move kids to a Peculiar Crossroad;
+	move player to the Garden, without printing a room description;
+	make no decision.
 
 Understand "church" as west when player is in Garden.
 
@@ -178,7 +206,7 @@ The eclectic interior is a scenery in the Church. "The Church has an eclectic in
 Eclectic interior is affecting. Eclectic interior is upper. Reminder of eclectic interior is "You take a moment to appreciate the modern interior which is fused with the carcass of the old building. It is obviously designed with a lot of artistic thought."
 Understand "church", "architecture" as eclectic interior when the player is in the Church.
 
-The janitor is a man in the Church. Janitothinkr wears blue overalls. Janitor is carrying a mop. "You see a janitor who is doing just enough for you to deduce his occupation."
+The janitor is a man in the Church. Janitor wears blue overalls. Janitor is carrying a mop. "You see a janitor who is doing just enough for you to deduce his occupation."
 Janitor is affecting. Janitor is downer. Reminder of janitor is "You consider janitor's enthusiasm. It's very relatable.".
 
 To leave church:
@@ -196,7 +224,13 @@ After going to Passage for the first time:
 
 The crowd is here. "All kinds of people fill the grounds by the entrance to the hospital."
 The description of the crowd is "The facial expressions of the people you can make out show a broad spectrum of emotions. There are black lines on this spectrogram though: joy and happiness."
+The crowd is affecting. The crowd is upper. The reminder of crowd is "Even though the sorrow prevails in this composition, watching people is inspiring".
 The entrance is a scenery in Passage. "Automatic doors are eager to let people in and out of the building. You're not eager to walk through them though."
+Joy is a scenery in Passage.
+Joy is affecting. Joy is upper. The reminder of joy is "This year surely was better than the last. Hopefully, the next one will be even better!".
+
+The doctor is a scenery in Hospital.
+Doctor is affecting. Doctor is downer. Reminder of doctor is "This doctor seemed determined. He must enjoy his work.."
 
 Instead of going inside in Hospital:
 	say "Gladly, you are in good health.";
