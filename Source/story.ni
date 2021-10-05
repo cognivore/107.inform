@@ -1,4 +1,4 @@
-"107" by Jonn
+"'107': A simulator of consciousness" by Jonn and George
 
 [Rabbit hole: https://gchq.github.io/CyberChef/#recipe=To_Morse_Code('-/.','Space','Line%20feed')&input=ZmluZC56aXAuZW5jb2RlZC5hcy5oZXguYW5kLnRyYW5zbGF0ZWQuaW50by5tb3JzZS5jb2RlLmluLm1pc2MuYXJ0ZWZhY3RzLmRpcmVjdG9yeQ]
 [https://www.meridianoutpost.com/resources/etools/calculators/calculator-morse-code.php?]
@@ -101,19 +101,30 @@ Understand "life" as inform programming language.
 
 The wind is a scenery in a Peculiar Crossroad.
 Reminder of wind is "It's so unnoticable, you almost have to force yourself to draw attention to it".
-Understand "weather" as wind.
+Understand "street", "weather" as wind.
+
+The cathedral is a scenery in a Peculiar Crossroad.
+Reminder of the cathedral is "The cathedral is awe-inspiring. Built to witness the rise and fall of civilizations. You normally aren't moved by sightseeing in the cities you live, but even you wouldn't blame the locals for staring at its glory".
+
+The office is a scenery in a Peculiar Crossroad.
+The office is affecting. The office is downer. Reminder of the office is "The office is marginally more tolerable than how it was portrayed the series with the same name".
+Understand "workplace" as the office.
 
 The kids are a scenery in a Peculiar Crossroad.
 Description of kids is "A girl who makes the most ambitious tricks stands up among the kids showing off their skateboarding skills. On a rare ocassion when she tumbles, she gets up immediately and completes the failed trick."
 Kids are affecting. Kids are upper. Reminder of kids is "It's always great to watch facial expressions of people who are concentrating on something. The girl with the skateboard has an expression of determination and finesse".
-Understand "girl" as kids.
+Understand "girl", "skaters" as kids.
+
+The vegetation is a scenery in a Peculiar Crossroad.
+The vegetation is affecting. The vegetation is upper. Reminder of the vegetation is "Ah, garden is really pretty. Sitting down staring at it could calm down the noise in your head...".
+Understand "flowers", "greenery", "garden" as the vegetation.
 
 Reminder of player is "Just living my life".
 
 When play begins:
-	now the level of the default logger is every level;
+	now the level of the default logger is off level;
 	now the fixation of the player is focused;
-	say "It was one of those days at the office, boring and intense at the same time. Your eyes are sore and the natural light feels weird after spending a day in a lamp-lit environment. Of course, you'd better figure out the solution to another problem that plagues your Python code base.
+	say "It was one of those days at the office, boring and intense at the same time. Your eyes are sore and the natural light feels weird after spending a day in a lamp-lit environment. These things keep you thinking about work. You'd better figure out the solution to another problem that plagues your Python code base.
 
 Red traffic light rushes you as you speed up to cross the two lanes that go from the cathedral passage to a small garden. After you crossed the street, you stop and look around. What would you like to think about?";
 	now the command prompt is "think about ".
@@ -123,6 +134,12 @@ After reading a command when the command prompt is "think about ":
 	if Resp matches the text "lamp":
 		say "Are these lamps bright and artificial... But it doesn't matter, we stare at the screens all day anyways.";
 		intensify player fixation;
+	[ TODO: friends, ...???] 
+	[ !!!! SPECIAL CASE !!!! ]
+	otherwise if (Resp matches "programming"):
+		say "Which do you mean, Python programming language, Scala programming language or Inform programming language?";
+		reject the player's command;
+	[ !!!! END OF SPECIAL CASE !!!! ]
 	otherwise if (Resp matches "roses"):
 		say "With mixed feelings, you remember how a person you have studied with sent you roses for your virtual graduation. Still better than thinking about work.";
 		abade player fixation;
@@ -132,7 +149,7 @@ After reading a command when the command prompt is "think about ":
 	otherwise if (Resp matches the text "crossing") or (Resp matches the text "crossroad"):
 		say "You think about peculiar crossroads in life... Decisions that change everything; people who are close and those drifting apart from you...";
 		abade player fixation;
-	otherwise if (Resp matches the text "traffic") or (Resp matches the text "road"):
+	otherwise if (Resp matches the text "traffic") or (Resp matches the text "road") or (Resp matches the text "lane"):
 		say "There was not much traffic. Where there was a lot of traffic is in the work E-Mail...";
 		intensify player fixation;
 	otherwise if (Resp matches "city") or (Resp matches the text "building"):
@@ -141,23 +158,23 @@ After reading a command when the command prompt is "think about ":
 	otherwise:
 		debug "Fallback in tutorial!";
 		change the text of the player's command to "think about [Resp]";
-	now the command prompt is "> ";
-	now delaying banner text is false;
-	say "
-
-
-	";
 	if player's command matches the text "think about":
 		debug "Here we should try to execute the command '[player's command]'";
 		make no decision;
 	otherwise:
+		now the command prompt is "> ";
+		now delaying banner text is false;
 		say banner text;
+		move vegetation to Garden;
 		move player to Garden;
 		reject the player's command.
 		
 After considering something when player is in a Peculiar Crossroad:
+	now the command prompt is "> ";
+	now delaying banner text is false;
 	debug "Executed fallback and moving player to the garden now";
 	say banner text;
+	move vegetation to Garden;
 	move player to Garden.
 
 Part III - London, Perception
@@ -168,6 +185,14 @@ The bench is here. "Benches are already dry, even though you are pretty sure tha
 The bench is enterable and a supporter.
 The bench is fixed in place.
 The description of the bench is "It would be nice to sit here and enjoy fresh air for a bit... Given how stressful the day at work was."
+
+After reading a command when the player is in the Garden:
+	let Resp be player's command;
+	if Resp matches "enter":
+		move player to Bronhood Church;
+		reject the player's command;
+	otherwise:
+		make no decision;
 
 A meditation is a scenery in Garden.
 The printed name of meditation is "sitting down and thinking".
@@ -195,14 +220,15 @@ After considering something when player is on a bench:
 	move player to the Garden, without printing a room description;
 	make no decision.
 
-Understand "church" as west when player is in Garden.
-
 Instead of going inside in Garden:
 	move player to Church.
 
-Bronhood Church is west of Garden. "You carefully enter a seventeenth century church through a heavy door of organic glass and dark plastic. Behind your back, lies the picturesque garden."
+Bronhood Church is a room. "You carefully enter a seventeenth century church through a heavy door of organic glass and dark plastic. Behind your back, lies the picturesque garden. In front of you, you see a pleasant interior."
 
-The eclectic interior is a scenery in the Church. "The Church has an eclectic interior to match the fascade."
+The plastic door is a closed door. "A plastic door that looks rather out of place is embedded into the ruins of a seventeenth century church."
+The plastic door is west of the Garden and east of the Church.
+
+The eclectic interior is a scenery in the Church. "The Church has an eclectic interior to match the fascade. The interior is pretty, but you clearly can't do much here except to appreciate it... Or the janitor's work."
 Eclectic interior is affecting. Eclectic interior is upper. Reminder of eclectic interior is "You take a moment to appreciate the modern interior which is fused with the carcass of the old building. It is obviously designed with a lot of artistic thought."
 Understand "church", "architecture" as eclectic interior when the player is in the Church.
 
@@ -241,14 +267,22 @@ Tom's Square is a room with printed name "Tom's Square (on the way Home)".
 Tom's Square is northwest of Passage.
 
 After going to Tom's Square for the first time:
-	say "In the middle of the square, a lone tree still holds to its leafs. It stands tall protected by the transparent shield of the office building. You look at the reflection of the dimming grey sky in the glass facade. So many offices...";
+	say "In the middle of the square, a couple of trees still hold to their leafs. They stand tall protected by the transparent shield of the office building. You look at the reflection of the dimming grey sky in the glass facade. So many offices...";
 	now player is debilitated;
 
 Every turn when player is debilitated:
 	end the story saying "The swarm of work-related thoughts overwhelms you. You hurry home and do everything possible to distract yourself... Better not stay up too late, there's more work tomorrow...";
 
 Every turn when player is carefree:
-	end the story finally saying "You win!"
+	let E be "i";
+	let Z be "c";
+	let K be "n";
+	let U be "t";
+	let X be "r";
+	let W be "p";
+	let L be "o";
+	let Y be "e";
+	end the story finally saying "You manged to discard all the pesky thoughts about work and finally pick up your present from [X][Y][Z][Y][W][U][E][L][K]!"
 
 [A bench in a park, noise and OTHERS are around][verb think]
 [puzzle -- stop thinking about work]
