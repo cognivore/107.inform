@@ -1,4 +1,4 @@
-"'107': A simulator of consciousness" by Jonn and George
+"'107': A simulator of consciousness" by Jonn
 
 [Rabbit hole: https://gchq.github.io/CyberChef/#recipe=To_Morse_Code('-/.','Space','Line%20feed')&input=ZmluZC56aXAuZW5jb2RlZC5hcy5oZXguYW5kLnRyYW5zbGF0ZWQuaW50by5tb3JzZS5jb2RlLmluLm1pc2MuYXJ0ZWZhY3RzLmRpcmVjdG9yeQ]
 [https://www.meridianoutpost.com/resources/etools/calculators/calculator-morse-code.php?]
@@ -16,6 +16,7 @@ The player has a fixation.
 A thing has some text called reminder. The reminder of a thing is usually "nothing in particular springs to mind".
 A thing can be thought-of or unthought-of. A thing is usually unthought-of.
 A thing can be affecting or unaffecting. A thing is usually unaffecting.
+A person can be interacted-with or uninteracted-with. A person is usually uninteracted-with.
 A thing can be upper or downer. A thing is usually downer.
 
 Part I - The Library
@@ -82,6 +83,14 @@ To journal (someone - person) fixation:
 	if someone is carefree:
 		debug "carefree".
 
+Every turn when player is obsessed:
+	say "You are about to be overwhelmed with work-related thoughts.
+
+Thinking about something that won't remind you of work would be beneficial, otherwise escape mechanisms may kick in."
+
+Every turn when player is focused:
+	say "It's hard to enjoy life thinking about work. If only you could think about something else."
+
 Part II - London, Tutorial
 
 At a Peculiar Crossroad is a room.
@@ -110,10 +119,36 @@ The office is a scenery in a Peculiar Crossroad.
 The office is affecting. The office is downer. Reminder of the office is "The office is marginally more tolerable than how it was portrayed the series with the same name".
 Understand "workplace" as the office.
 
-The kids are a scenery in a Peculiar Crossroad.
+The group of kids are a people in a Peculiar Crossroad.
 Description of kids is "A girl who makes the most ambitious tricks stands up among the kids showing off their skateboarding skills. On a rare ocassion when she tumbles, she gets up immediately and completes the failed trick."
 Kids are affecting. Kids are upper. Reminder of kids is "It's always great to watch facial expressions of people who are concentrating on something. The girl with the skateboard has an expression of determination and finesse".
 Understand "girl", "skaters" as kids.
+[or "skate" or "skateboard" or "skateboards"]
+After asking kids about "tricks":
+	if kids are uninteracted-with:
+		abade player fixation;
+		now kids are interacted-with;
+		say "The girl says that she loves skateboarding and it helps her to express herself. She gives you her skateboard and you skate a little bit. It was fun!";
+		move player to Garden;
+	otherwise: 
+		say "The girl smiles at you and makes an ollie."
+After asking kids about "skate":
+	if kids are uninteracted-with:
+		abade player fixation;
+		now kids are interacted-with;
+		say "The girl says that she loves skateboarding and it helps her to express herself. She gives you her skateboard and you skate a little bit. It was fun!";
+		move player to Garden;
+	otherwise: 
+		say "The girl smiles at you and makes an ollie."
+After asking kids about "skateboard":
+	if kids are uninteracted-with:
+		abade player fixation;
+		now kids are interacted-with;
+		say "The girl says that she loves skateboarding and it helps her to express herself. She gives you her skateboard and you skate a little bit. It was fun!";
+		move player to Garden;
+	otherwise: 
+		say "The girl smiles at you and makes an ollie."
+
 
 The vegetation is a scenery in a Peculiar Crossroad.
 The vegetation is affecting. The vegetation is upper. Reminder of the vegetation is "Ah, garden is really pretty. Sitting down staring at it could calm down the noise in your head...".
@@ -140,6 +175,9 @@ After reading a command when the command prompt is "think about ":
 		say "Which do you mean, Python programming language, Scala programming language or Inform programming language?";
 		reject the player's command;
 	[ !!!! END OF SPECIAL CASE !!!! ]
+	otherwise if (Resp matches "nothing"):
+		say "You try your best to free your mind.";
+		abade player fixation;
 	otherwise if (Resp matches "roses"):
 		say "With mixed feelings, you remember how a person you have studied with sent you roses for your virtual graduation. Still better than thinking about work.";
 		abade player fixation;
@@ -248,7 +286,7 @@ After going to Passage for the first time:
 	say "The space in front of the hospital is a stage to a diverse group of lethargic sitters and amble walkers. A doctor throws an empty coffee cup into a bin and disappears into the hospital entrance.";
 	intensify player fixation;
 
-The crowd is here. "All kinds of people fill the grounds by the entrance to the hospital."
+The crowd is people in Passage. "All kinds of people fill the grounds by the entrance to the hospital."
 The description of the crowd is "The facial expressions of the people you can make out show a broad spectrum of emotions. There are black lines on this spectrogram though: joy and happiness."
 The crowd is affecting. The crowd is upper. The reminder of crowd is "Even though the sorrow prevails in this composition, watching people is inspiring".
 The entrance is a scenery in Passage. "Automatic doors are eager to let people in and out of the building. You're not eager to walk through them though."
@@ -274,15 +312,7 @@ Every turn when player is debilitated:
 	end the story saying "The swarm of work-related thoughts overwhelms you. You hurry home and do everything possible to distract yourself... Better not stay up too late, there's more work tomorrow...";
 
 Every turn when player is carefree:
-	let E be "i";
-	let Z be "c";
-	let K be "n";
-	let U be "t";
-	let X be "r";
-	let W be "p";
-	let L be "o";
-	let Y be "e";
-	end the story finally saying "You manged to discard all the pesky thoughts about work and finally pick up your present from [X][Y][Z][Y][W][U][E][L][K]!"
+	end the story finally saying "You manged to discard all the pesky thoughts about work. After all, you know that you'll always have https://md110.se/options.pdf"
 
 [A bench in a park, noise and OTHERS are around][verb think]
 [puzzle -- stop thinking about work]

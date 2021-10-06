@@ -22,7 +22,7 @@ placeholder [IFID] = "00B91C2A-6A3E-480E-90AB-3E956D7F5BD3"
 placeholder [RELEASE] = "1"
 placeholder [YEAR] = "2021"
 placeholder [TITLE] = "'107': A simulator of consciousness"
-placeholder [AUTHOR] = "Jonn and George"
+placeholder [AUTHOR] = "Jonn"
 placeholder [BLURB] = "A work of interactive fiction."
 
 ! Other material to release
